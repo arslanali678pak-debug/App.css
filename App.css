@@ -1,0 +1,181 @@
+/* App.css — Paradise Nursery landing page styles */
+
+:root {
+  --green-dark: #1b4332;
+  --green: #2d6a4f;
+  --green-light: #74c69d;
+  --cream: #faf6ef;
+  --white: #ffffff;
+  --text-dark: #212529;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--green-light);
+}
+
+/* ---------- Landing page hero with background image ---------- */
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--white);
+
+  /* Background image: a real plant nursery.
+     The dark gradient sits on top so the heading stays readable.
+     If the first image ever fails to load, the second nursery
+     image underneath is used as a fallback. */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('https://www.karurrosenursery.com/images/contact/contact-hero-karur-rose-nursery.png'),
+    url('https://palmlandnursery.com/wp-content/uploads/2025/10/Diverse_Plant_Nursery_Garden.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--green-dark); /* shown while the image loads */
+}
+
+.landing-page h1 {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.landing-page p {
+  font-size: 1.25rem;
+  max-width: 640px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--green);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Plant cards section ---------- */
+
+.plants-section {
+  padding: 64px 48px;
+  text-align: center;
+}
+
+.plants-section h2 {
+  font-size: 2rem;
+  color: var(--green-dark);
+  margin-bottom: 32px;
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.plant-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.plant-card h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .landing-page {
+    background-attachment: scroll; /* fixed backgrounds stutter on mobile */
+  }
+
+  .landing-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .landing-page p {
+    font-size: 1rem;
+  }
+
+  .plants-section {
+    padding: 48px 20px;
+  }
+}
